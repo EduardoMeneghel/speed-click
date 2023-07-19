@@ -4,6 +4,12 @@ html, body {
     overflow: hidden;
 }
 
+.image {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+
 #player {
     position: absolute;
     width: 100px;
@@ -25,9 +31,16 @@ html, body {
     white-space: nowrap;
 }
 
-#power {
+#score {
     position: absolute;
     bottom: 30px;
+    left: 120px;
+    font-family: 'monospace';
+}
+
+#high-score {
+    position: absolute;
+    bottom: 50px;
     left: 120px;
     font-family: 'monospace';
 }
