@@ -3,7 +3,7 @@ let enemy;
 let intervalReference;
 
 generateEnemy();
-setHighScore();
+updateHighScore();
 
 setInterval(function () {
     newPosition();
@@ -65,16 +65,25 @@ function setHighScore() {
     let scoreElement = document.getElementById("score");
     let currentHighScore = parseInt(scoreElement.innerHTML.split(":")[1].trim());
     let highScore = localStorage.getItem("score");
+
     if (highScore) {
         let highScoreValue = parseInt(highScore);
         if (currentHighScore > highScoreValue) {
-            localStorage.setItem("score", currentHighScore.toString());
-            let newHighScoreElement = document.getElementById("high-score");
-            newHighScoreElement.innerHTML = "HIGH SCORE: " + currentHighScore;
-        } else {
-            let newHighScoreElement = document.getElementById("high-score");
-            newHighScoreElement.innerHTML = "HIGH SCORE: " + highScore;
+            localStorage.setItem("score", currentHighScore);
+            updateHighScore();
         }
+    } else {
+        localStorage.setItem("score", currentHighScore);
+        updateHighScore();
+    }
+}
+
+function updateHighScore() {
+    let highScore = localStorage.getItem("score");
+    if (highScore) {
+        let highScoreValue = parseInt(highScore);
+        let newHighScoreElement = document.getElementById("high-score");
+        newHighScoreElement.innerHTML = "HIGH SCORE: " + highScoreValue;
     }
 }
 
