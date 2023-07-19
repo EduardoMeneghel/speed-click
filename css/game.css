@@ -1,0 +1,39 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+#player {
+    position: absolute;
+    width: 100px;
+    bottom: 10px;
+    left: 10px;
+}
+
+#backgroud {
+    width: 100%;
+    height: 100%;
+    background-color:lightcyan;
+}
+
+#life {
+    position: absolute;
+    bottom: 10px;
+    left: 120px;
+    font-family: 'monospace';
+    white-space: nowrap;
+}
+
+#power {
+    position: absolute;
+    bottom: 30px;
+    left: 120px;
+    font-family: 'monospace';
+}
+
+#enemy {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
